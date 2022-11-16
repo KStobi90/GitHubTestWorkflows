@@ -1,8 +1,12 @@
-name: Run UI Selenium Tests on Chrome
+name: RunUISeleniumTestsonChrome
 
 on:
   workflow_call: 
-  
+    inputs:
+     coverage:
+        type: string
+        default: REGRES
+        required: false
 
 jobs:
   build:
