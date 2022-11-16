@@ -6,8 +6,8 @@ on:
      workflow-name:
         type: string
         required: true
-     PAT:
-        type: string
+    secrets:
+     PAT:        
         required: true
 
 jobs:
@@ -16,6 +16,6 @@ jobs:
     steps:
       - run: |
           curl -X POST \
-          -H "Authorization: Bearer ${{ inputs.PAT }}" \
+          -H "Authorization: Bearer ${{ secrets.PAT }}" \
           -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/KStobi90/TestSelenium/actions/workflows/${{ inputs.workflow-name }}.yml/dispatches \
