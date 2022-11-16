@@ -6,9 +6,10 @@ on:
      workflow-name:
         type: string
         required: true
-      PAT:
+     PAT:
         type: string
         required: true
+        description: "Personal Access Token"
 
 on:
   workflow_dispatch:
