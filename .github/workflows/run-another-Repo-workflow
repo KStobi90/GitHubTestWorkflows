@@ -1,0 +1,25 @@
+name: RunWorkflowOnANotherRepository
+
+on:
+  workflow_call: 
+    inputs:
+     workflow-name:
+        type: string
+        required: true
+      PAT:
+        type: string
+        required: true
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  triggerUITests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -X POST \
+          -H "Authorization: Bearer ${{ inputs.PAT }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/KStobi90/TestSelenium/actions/workflows/${{ inputs.workflow-name }}.yml/dispatches \
