@@ -19,3 +19,4 @@ jobs:
           -H "Authorization: Bearer ${{ secrets.PAT }}" \
           -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/KStobi90/TestSelenium/actions/workflows/${{ inputs.workflow-name }}.yml/dispatches \
+          -d '{"ref":"main","inputs":{"coverage":"SMOKE"}}'
