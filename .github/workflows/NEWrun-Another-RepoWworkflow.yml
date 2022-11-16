@@ -6,13 +6,9 @@ on:
      workflow-name:
         type: string
         required: true
-      PAT:
+     PAT:
         type: string
         required: true
-
-on:
-  workflow_dispatch:
-
 
 jobs:
   triggerUITests:
