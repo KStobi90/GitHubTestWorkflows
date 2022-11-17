@@ -7,6 +7,8 @@ on:
         type: string
         default: REGRES
         required: false
+        
+  workflow_dispatch:
 
 jobs:
   build:
